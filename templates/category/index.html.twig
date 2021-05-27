@@ -12,10 +12,13 @@
 
 {% for category in categories %}
 
-        <div>
-            <h2>{{ loop.index }} / {{ category.name }} -
-        </div>
-<a href="{{ path("category_show", { categoryName: category.name }) }}">Voir la fiche</a> 
+<div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title">{{ loop.index }} / {{ category.name }}</h5>
+    <a href="{{ path("category_show", { categoryName: category.name }) }}" class="btn btn-primary">Voir la fiche</a>
+  </div>
+</div>
+
 	{% else %}
 		Aucune category trouvée.
 	{% endfor %}

@@ -11,13 +11,18 @@
 	</h1>
 
 {% for program in programs %}
-
-        <div>
-            <h2>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
-            <p>{{ program.summary }}</p>
-            {# Lien vers la fiche de la série : #}
-            <a href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a>
-        </div>
+<div class="card text-center">
+  <div class="card-header">
+    {{ loop.index }} / {{ program.title }}
+  </div>
+  <div class="card-body">
+    <p class="card-text">Catégorie : {{ program.category.name }}</p>
+	<p class="card-text">{{ program.summary }}</p>
+    <a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-primary">Voir la fiche</a>
+  </div>
+</div>
+</BR>
+        
 
 	{% else %}
 		Aucune série trouvée.
