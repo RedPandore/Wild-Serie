@@ -149,7 +149,7 @@ class Program
         return $this;
     }
 
- /**
+    /**
      * @return Collection|Season[]
      */
     public function getSeasons(): Collection

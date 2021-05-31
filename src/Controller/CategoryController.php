@@ -49,7 +49,7 @@ class CategoryController extends AbstractController
             ->getRepository(Program::class)
             ->findBy(
                 [
-                    'Category' => $category->getId()
+                    'category' => $category->getId()
                 ],
                 [
                     'id' => 'DESC'
