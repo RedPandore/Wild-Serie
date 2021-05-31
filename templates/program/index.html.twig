@@ -1,7 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Wild Series{% endblock %}
 
- {% block body %}
- <h1>{{ website }} index</h1>
- {% endblock %}
+{% block title %}All programs
+{% endblock %}
+
+
+{% block body %}
+
+	<h1>Toutes les séries de la table program :
+	</h1>
+
+{% for program in programs %}
+<div class="card text-center">
+  <div class="card-header">
+    {{ loop.index }} / {{ program.title }}
+  </div>
+  <div class="card-body">
+    <p class="card-text">Catégorie : {{ program.category.name }}</p>
+	<p class="card-text">{{ program.summary }}</p>
+    <a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-primary">Voir la fiche</a>
+  </div>
+</div>
+</BR>
+        
+
+	{% else %}
+		Aucune série trouvée.
+	{% endfor %}
+
+
+	<a href="{{ path('app_index') }}">
+		Retour à l'accueil
+	</a>
+{% endblock %}
