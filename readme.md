@@ -1,1 +1,1 @@
-Lien vers la video Quete 09 - Les fixtures : https://youtu.be/qtbMMvQ0T2Q
+Lien vers la video Quete 10 - Les relations bidirectionnelles avec Doctrine : https://www.youtube.com/watch?v=UOAl0TAecQk

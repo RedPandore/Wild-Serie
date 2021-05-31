@@ -16,6 +16,7 @@
     {{ loop.index }} / {{ program.title }}
   </div>
   <div class="card-body">
+  <img src="{{ program.poster }}" </br>
     <p class="card-text">Catégorie : {{ program.category.name }}</p>
 	<p class="card-text">{{ program.summary }}</p>
     <a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-primary">Voir la fiche</a>
