@@ -1,1 +1,1 @@
-Lien vers la video 14 - Symfony : Validation : https://youtu.be/tzexdBeAsps
+Lien vers la video 15 - Symfony : Doctrine relations “Many-To-Many” : https://youtu.be/2hSGs0bZF74
