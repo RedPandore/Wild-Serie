@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
 
- {% block body %}
- <h1> Bienvenue test !</h1>
- {% endblock %}
+{% block body %}
+
+    <div class="p-5 d-flex flex-column justify-content-center">
+            <img class="m-auto img-fluid w-100" src="{{ asset('build/Wild_serie.png') }}" alt="logo">
+            <a class="btn btn-lg btn-primary m-2" href="{{ path('program_index') }}">Voir toutes les séries</a>
+        </div>
+
+
+{% endblock %}
