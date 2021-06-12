@@ -1,11 +1,11 @@
 $theme-colors: (
-  "primary": rgba(182, 137, 115, 1),
-  "secondary": rgba(250, 243, 224, 1),
-  "dark": rgba(30, 33, 45, 1),
-  "middle-light": rgba(234, 191, 159, 1)
+    'primary': rgba(182, 137, 115, 1),
+    'secondary': rgba(250, 243, 224, 1),
+    'dark': rgba(30, 33, 45, 1),
+    'middle-light': rgba(234, 191, 159, 1),
 );
 
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
 body {
     background-color: rgb(255, 255, 255);

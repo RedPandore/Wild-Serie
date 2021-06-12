@@ -1,1 +1,1 @@
-Lien vers la video Quete 13 - Symfony : Générer un CRUD : https://youtu.be/HunZLk3yU5Q
+Lien vers la video 14 - Symfony : Validation : https://youtu.be/tzexdBeAsps
