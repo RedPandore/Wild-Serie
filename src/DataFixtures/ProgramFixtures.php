@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Actor;
 use App\Entity\Program;
+use App\Service\Slugify;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -47,8 +48,18 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             'category' => 'Animation',
         ],
     ];
+
+    private $slugify;
+
+    public function __construct(Slugify $slugify)
+    {
+        $this->slugify = $slugify;
+    }
+
+
     public function load(ObjectManager $manager)
     {
+
         foreach(self::PROGRAMS as $title => $content) {
         $program = new Program();
         $program->setTitle($title);
@@ -60,13 +71,16 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         for($i=0; $i > count(ActorFixtures::ACTORS); $i++) {
             $program->addActor(($this->getReference('actor_' . $i)));
         }
+
+        $program->setSlug($this->slugify->generate($program->getTitle()));
+
         $manager->persist($program);
         $this->addReference('program_' . $title, $program);
     }
         $manager->flush();
     }
-    public function getDependencies()
 
+    public function getDependencies()
     {
         // Tu retournes ici toutes les classes de fixtures dont ProgramFixtures dépend
         return [

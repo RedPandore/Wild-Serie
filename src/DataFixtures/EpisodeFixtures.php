@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Episode;
+use App\Service\Slugify;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -52,6 +53,13 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
         ],
     ];
 
+    private $slugify;
+
+    public function __construct(Slugify $slugify)
+    {
+        $this->slugify = $slugify;
+    }
+
     public function load(ObjectManager $manager)
     {
         foreach (ProgramFixtures::PROGRAMS as $programTitle => $programDescription) {
@@ -61,7 +69,8 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
                     $episode->setTitle($episodeDescription['title']);
                     $episode->setNumber($episodeDescription['number']);
                     $episode->setSynopsis($episodeDescription['synopsis']);
-                    $episode->setSeason($this->getReference('season_'. $programTitle . '_' . $seasonTitle));
+                    $episode->setSeason($this->getReference('season_' . $programTitle . '_' . $seasonTitle));
+                    $episode->setSlug($this->slugify->generate($seasonTitle . $episode->getTitle()));
                     $manager->persist($episode);
                 }
             }

@@ -20,7 +20,8 @@
                 <strong>Acteurs :</strong>
                 <ul>
                     {% for actor in program.actors %}
-                        <li><a href="{{ path('actor_show', {id: actor.id}) }}" class="card-link">{{ actor.name }}</a>
+                        <li>
+                            <a href="{{ path('actor_show', {id: actor.id}) }}" class="card-link">{{ actor.name }}</a>
                         </li>
                     {% else %}
                         <li>Aucun acteur pour cette série</li>
@@ -29,7 +30,7 @@
             </ul>
             <ul class="list-group list-group-flush">
                 {% for season in seasons %}
-                    <a href="/programs/{{ program.id }}/season/{{ season.id }}">
+                    <a href="{{ path('program_season_show', {slug: program.slug, seasonId: season.id}) }}">
                         <li class="list-group-item">Saison :
                             {{ season.number }}</li>
                     </a>
