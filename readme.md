@@ -1,1 +1,1 @@
-Lien vers la video 16 - Symfony : EntityType : https://youtu.be/FKxC5o-lQAQ
+Lien vers la video 19 - Symfony : Envoi d’e-mail : https://youtu.be/foCItpfS5bM

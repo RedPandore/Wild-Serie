@@ -1,0 +1,9 @@
+{% extends 'mailLayout.html.twig' %}
+    {% block body %}
+
+        <h1>La série {{ program.title }} a était ajouté</h1>
+
+        <p>Bonjour, la série {{ program.title }} a était ajouté sur Wild Series</p>
+
+        <p>Synopsis : {{program.summary }}</p>
+    {% endblock %}
